@@ -180,6 +180,7 @@ nav.scrolled .brand img{height:42px}
 .foot-contact a{color:var(--ink-soft);text-decoration:none;transition:color .3s;display:block;margin-bottom:.5rem}
 .foot-contact a:hover{color:var(--champagne)}
 </style>
+<script>window.Mangomint = window.Mangomint || {}; window.Mangomint.CompanyId = 887268;</script><script src="https://booking.mangomint.com/app.js" async></script>
 </head>
 <body data-page="consultation">
 <div id="light" aria-hidden="true"></div>
@@ -203,7 +204,7 @@ nav.scrolled .brand img{height:42px}
   <h1>Your free<br><em>consultation</em></h1>
   <p class="lead">Thirty minutes with a medical professional to map your face, your goals, and your options. You leave with a plan &mdash; whether or not you book a single treatment.</p>
   <div style="margin-top:2rem;position:relative;z-index:3">
-    <a class="btn btn-solid" href="https://booking.mangomint.com/newyoumedicalspa?serviceId=94" target="_blank" rel="noopener">Book Instantly Online</a>
+    <a class="btn btn-solid" href="https://booking.mangomint.com/newyoumedicalspa?serviceId=94">Book Instantly Online</a>
     <span style="display:inline-block;margin-left:1rem;font-size:.78rem;letter-spacing:.14em;color:var(--ink-soft)">or send the request below</span>
   </div>
 </header>
@@ -219,7 +220,7 @@ nav.scrolled .brand img{height:42px}
         <li>Honest recommendations, including "you don't need that yet"</li>
         <li>A written roadmap with transparent pricing to take home</li>
       </ul>
-      <p class="lead" style="margin-top:2rem">Prefer to book a treatment directly? The <a href="https://booking.mangomint.com/newyoumedicalspa?serviceId=96" target="_blank" rel="noopener" style="color:var(--champagne)">$59 Lift &amp; Glow</a> is the perfect first appointment &mdash; that link books it instantly.</p>
+      <p class="lead" style="margin-top:2rem">Prefer to book a treatment directly? The <a href="https://booking.mangomint.com/newyoumedicalspa?serviceId=96" style="color:var(--champagne)">$59 Lift &amp; Glow</a> is the perfect first appointment &mdash; that link books it instantly.</p>
     </div>
     <div class="reveal">
       <!-- Consultation lead form powered by FormSubmit (free).
@@ -322,7 +323,7 @@ nav.scrolled .brand img{height:42px}
 (function(){
   // === OPTIONAL: paste a GENERAL Mangomint booking link below to send nav/consultation "Book" buttons straight to booking. The $59 Lift & Glow buttons already link directly to its booking page. ===
   var BOOKING_URL = "https://booking.mangomint.com/newyoumedicalspa?serviceId=94"; // Free consultation direct booking
-  if(BOOKING_URL){document.querySelectorAll('.js-book').forEach(function(a){a.href=BOOKING_URL;a.target="_blank";a.rel="noopener"})}
+  if(BOOKING_URL){document.querySelectorAll('.js-book').forEach(function(a){a.href=BOOKING_URL})}
 
   var docEl=document.documentElement;
   var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;

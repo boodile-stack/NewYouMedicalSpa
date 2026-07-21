@@ -220,6 +220,7 @@ nav.scrolled .brand img{height:42px}
 .oclose{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--ink-soft);font-size:1.1rem;cursor:pointer}
 .oclose:hover{color:var(--champagne)}
 </style>
+<script>window.Mangomint = window.Mangomint || {}; window.Mangomint.CompanyId = 887268;</script><script src="https://booking.mangomint.com/app.js" async></script>
 </head>
 <body data-page="shop">
 <div id="light" aria-hidden="true"></div>
@@ -580,7 +581,7 @@ var PAYMENT_LINKS = {
 (function(){
   // === OPTIONAL: paste a GENERAL Mangomint booking link below to send nav/consultation "Book" buttons straight to booking. The $59 Lift & Glow buttons already link directly to its booking page. ===
   var BOOKING_URL = "https://booking.mangomint.com/newyoumedicalspa?serviceId=94"; // Free consultation direct booking
-  if(BOOKING_URL){document.querySelectorAll('.js-book').forEach(function(a){a.href=BOOKING_URL;a.target="_blank";a.rel="noopener"})}
+  if(BOOKING_URL){document.querySelectorAll('.js-book').forEach(function(a){a.href=BOOKING_URL})}
 
   var docEl=document.documentElement;
   var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
