@@ -134,6 +134,17 @@ section{padding:clamp(4.5rem,9vw,7.5rem) clamp(1.4rem,6vw,6rem);position:relativ
 .tier .amount{font-family:'Italiana',serif;font-size:2.9rem;line-height:1;margin:.8rem 0 .2rem}
 .tier .per{font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
 .tier ul{list-style:none;margin:1.5rem 0 2rem;display:grid;gap:.65rem;flex:1}
+/* ---------- MEMBERSHIP POLICY GATE ---------- */
+.policy-gate{margin-top:auto;display:flex;flex-direction:column;gap:.9rem}
+.policy-box{border:1px solid var(--hairline);border-left:2px solid var(--champagne);border-radius:12px;background:rgba(239,205,187,.05);padding:.95rem 1.1rem}
+.policy-box p{font-size:.74rem;line-height:1.65;color:var(--ink-soft);letter-spacing:.04em;margin:0}
+.policy-box strong{color:var(--champagne);font-weight:500}
+.policy-agree{display:flex;align-items:flex-start;gap:.7rem;cursor:pointer;font-size:.76rem;line-height:1.5;color:var(--bone);letter-spacing:.05em;-webkit-tap-highlight-color:transparent}
+.policy-agree input[type=checkbox]{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:22px;height:22px;margin:0;border:1px solid var(--champagne);border-radius:6px;background:none;cursor:pointer;position:relative;transition:background .3s var(--ease),border-color .3s var(--ease)}
+.policy-agree input[type=checkbox]:checked{background:var(--champagne)}
+.policy-agree input[type=checkbox]:checked::after{content:'';position:absolute;left:7px;top:3px;width:5px;height:10px;border:solid var(--noir);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.policy-agree input[type=checkbox]:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+.btn-gated[disabled]{opacity:.4;cursor:not-allowed;pointer-events:none}
 .tier li{display:flex;gap:.8rem;align-items:baseline;color:var(--ink-soft);font-size:.92rem}
 .tier li::before{content:"\2726";color:var(--gold);font-size:.55rem}
 @media(max-width:960px){.tiers{grid-template-columns:1fr}}
@@ -218,7 +229,16 @@ nav.scrolled .brand img{height:42px}
           <li>Priority booking windows</li>
           <li>Birthday treatment gift</li>
         </ul>
-        <a class="btn btn-ghost" href="https://buy.stripe.com/9B66oJ4ZZ67md6Q8052Ry0i" target="_blank" rel="noopener">Start With Glow</a>
+        <div class="policy-gate">
+          <div class="policy-box" id="policy-glow">
+            <p><strong>Memberships are non-refundable.</strong> You may cancel anytime, but any payment already made is not refunded &mdash; even if you do not book, or you miss your appointment for that month. That payment is forfeited. By continuing, you agree to this policy.</p>
+          </div>
+          <label class="policy-agree" for="agree-glow">
+            <input type="checkbox" id="agree-glow" data-gate="glow">
+            <span>I have read and agree to the membership policy.</span>
+          </label>
+          <button type="button" class="btn btn-ghost btn-gated" id="btn-glow" data-gate-for="glow" data-href="https://buy.stripe.com/9B66oJ4ZZ67md6Q8052Ry0i" aria-describedby="policy-glow" disabled>Continue</button>
+        </div>
       </div>
       <div class="tier feat">
         <p class="tag">Most Loved</p>
@@ -231,7 +251,16 @@ nav.scrolled .brand img{height:42px}
           <li>First access to new treatments and events</li>
           <li>Complimentary skin analysis each quarter</li>
         </ul>
-        <a class="btn btn-solid" href="https://buy.stripe.com/3cI4gB2RRfHW5Eo5RX2Ry0h" target="_blank" rel="noopener">Start With Sculpt</a>
+        <div class="policy-gate">
+          <div class="policy-box" id="policy-sculpt">
+            <p><strong>Memberships are non-refundable.</strong> You may cancel anytime, but any payment already made is not refunded &mdash; even if you do not book, or you miss your appointment for that month. That payment is forfeited. By continuing, you agree to this policy.</p>
+          </div>
+          <label class="policy-agree" for="agree-sculpt">
+            <input type="checkbox" id="agree-sculpt" data-gate="sculpt">
+            <span>I have read and agree to the membership policy.</span>
+          </label>
+          <button type="button" class="btn btn-solid btn-gated" id="btn-sculpt" data-gate-for="sculpt" data-href="https://buy.stripe.com/3cI4gB2RRfHW5Eo5RX2Ry0h" aria-describedby="policy-sculpt" disabled>Continue</button>
+        </div>
       </div>
       <div class="tier">
         <p class="tag">The Full Portrait</p>
@@ -244,7 +273,16 @@ nav.scrolled .brand img{height:42px}
           <li>Concierge scheduling &mdash; we plan your year</li>
           <li>Exclusive member-only offers</li>
         </ul>
-        <a class="btn btn-ghost" href="https://buy.stripe.com/14A3cxgIHgM0gj29492Ry0g" target="_blank" rel="noopener">Become An Icon</a>
+        <div class="policy-gate">
+          <div class="policy-box" id="policy-icon">
+            <p><strong>Memberships are non-refundable.</strong> You may cancel anytime, but any payment already made is not refunded &mdash; even if you do not book, or you miss your appointment for that month. That payment is forfeited. By continuing, you agree to this policy.</p>
+          </div>
+          <label class="policy-agree" for="agree-icon">
+            <input type="checkbox" id="agree-icon" data-gate="icon">
+            <span>I have read and agree to the membership policy.</span>
+          </label>
+          <button type="button" class="btn btn-ghost btn-gated" id="btn-icon" data-gate-for="icon" data-href="https://buy.stripe.com/14A3cxgIHgM0gj29492Ry0g" aria-describedby="policy-icon" disabled>Continue</button>
+        </div>
       </div>
     </div>
     <p class="reveal" style="margin-top:2rem;font-size:.8rem;color:var(--ink-soft);letter-spacing:.08em;text-align:center">Memberships are month-to-month. Pause or cancel anytime &mdash; no contracts, no games. <a href="https://newyouweston.com/CancelMembership" style="color:var(--champagne)">Manage membership</a></p>
@@ -315,6 +353,21 @@ nav.scrolled .brand img{height:42px}
   // === OPTIONAL: paste a GENERAL Mangomint booking link below to send nav/consultation "Book" buttons straight to booking. The $59 Lift & Glow buttons already link directly to its booking page. ===
   var BOOKING_URL = "https://booking.mangomint.com/newyoumedicalspa?serviceId=94"; // Free consultation direct booking
   if(BOOKING_URL){document.querySelectorAll('.js-book').forEach(function(a){a.href=BOOKING_URL;a.target="_blank";a.rel="noopener"})}
+
+  // === MEMBERSHIP POLICY GATE ===
+  // Each membership's Continue button stays disabled until its policy checkbox is ticked.
+  document.querySelectorAll('.policy-agree input[type=checkbox][data-gate]').forEach(function(box){
+    var btn=document.querySelector('.btn-gated[data-gate-for="'+box.dataset.gate+'"]');
+    if(!btn) return;
+    function sync(){btn.disabled=!box.checked}
+    box.addEventListener('change',sync);
+    sync();
+    btn.addEventListener('click',function(){
+      if(!box.checked) return;              // belt-and-braces: never open checkout unagreed
+      var w=window.open(btn.dataset.href,'_blank','noopener');
+      if(w) w.opener=null;
+    });
+  });
 
   var docEl=document.documentElement;
   var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
